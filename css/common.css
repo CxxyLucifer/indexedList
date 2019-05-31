@@ -1,0 +1,21 @@
+html,body{
+    height: 100%;
+}
+
+
+.mui-table-view-cell img{
+    margin-right:10px;
+}
+
+.mui-indexed-list-bar{
+    display: flex;
+    flex-direction: column;
+}
+
+.mui-indexed-list-bar a{
+   flex:1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+    

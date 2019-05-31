@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>通讯录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="./css/mui.min.css" rel="stylesheet" />
+		<link href="./css/mui.indexedlist.css" rel="stylesheet" />
+		<link href="./css/common.css" rel="stylesheet" />
+	</head>
+
+	<body >	
+		<div class="mui-content" style="height:100%;">
+			<div class="mui-indexed-list-search mui-input-row mui-search">
+				<input type="search" style="margin-bottom: 1px;" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+			</div>
+			<div id='list' class="mui-indexed-list mui-scroll-wrapper">
+				<div class="mui-indexed-list-bar">
+					<a>A</a><a>B</a><a>C</a><a>D</a><a>E</a><a>F</a><a>G</a>
+					<a>H</a><a>I</a><a>J</a><a>K</a><a>L</a><a>M</a><a>N</a>
+					<a>O</a><a>P</a><a>Q</a><a>R</a><a>S</a><a>T</a>
+					<a>U</a><a>V</a><a>W</a><a>X</a><a>Y</a><a>Z</a>
+				</div>
+				<div class="mui-indexed-list-alert"></div>
+				<div class="mui-indexed-list-inner mui-scroll">
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+					<ul class="mui-table-view">
+						<li data-group="A" class="mui-table-view-divider mui-indexed-list-group">A</li>
+						<li data-group="B" class="mui-table-view-divider mui-indexed-list-group">B</li>
+						<li data-group="C" class="mui-table-view-divider mui-indexed-list-group">C</li>
+						<li data-group="D" class="mui-table-view-divider mui-indexed-list-group">D</li>
+						<li data-group="E" class="mui-table-view-divider mui-indexed-list-group">E</li>
+						<li data-group="F" class="mui-table-view-divider mui-indexed-list-group">F</li>
+						<li data-group="G" class="mui-table-view-divider mui-indexed-list-group">G</li>
+						<li data-group="H" class="mui-table-view-divider mui-indexed-list-group">H</li>
+						<li data-group="I" class="mui-table-view-divider mui-indexed-list-group">I</li>
+						<li data-group="J" class="mui-table-view-divider mui-indexed-list-group">J</li>
+						<li data-group="K" class="mui-table-view-divider mui-indexed-list-group">K</li>
+						<li data-group="L" class="mui-table-view-divider mui-indexed-list-group">L</li>
+						<li data-group="M" class="mui-table-view-divider mui-indexed-list-group">M</li>
+						<li data-group="N" class="mui-table-view-divider mui-indexed-list-group">N</li>
+						<li data-group="O" class="mui-table-view-divider mui-indexed-list-group">O</li>
+						<li data-group="P" class="mui-table-view-divider mui-indexed-list-group">P</li>
+						<li data-group="Q" class="mui-table-view-divider mui-indexed-list-group">Q</li>
+						<li data-group="R" class="mui-table-view-divider mui-indexed-list-group">R</li>
+						<li data-group="S" class="mui-table-view-divider mui-indexed-list-group">S</li>
+						<li data-group="T" class="mui-table-view-divider mui-indexed-list-group">T</li>
+						<li data-group="U" class="mui-table-view-divider mui-indexed-list-group">U</li>
+						<li data-group="V" class="mui-table-view-divider mui-indexed-list-group">V</li>
+						<li data-group="W" class="mui-table-view-divider mui-indexed-list-group">W</li>
+						<li data-group="X" class="mui-table-view-divider mui-indexed-list-group">X</li>
+						<li data-group="Y" class="mui-table-view-divider mui-indexed-list-group">Y</li>
+						<li data-group="Z" class="mui-table-view-divider mui-indexed-list-group">Z</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/mui.min.js"></script>
+		<script type="text/javascript" src="./js/mui.indexedlist.js"></script>
+		<script type="text/javascript" src="./js/pinyinUtil.js"></script>
+		<script>
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0006 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			mui.ready(function () {
+				loadData();
+			});
+
+			function loadData(){
+				var data = [{
+					"name": '王建国',
+					"phone": 13961858235,
+				}, {
+					"name": '二狗蛋',
+					"phone": 18961858143,
+				}, {
+					"name": '齐二毛',
+					"phone": 15361858115,
+				}, {
+					"name": '刘律仪',
+					"phone": 17761859115,
+				}, {
+					"name": '孙慧慧',
+					"phone": 17661858445,
+				},{
+					"name": '洪建国',
+					"phone": 19961854115,
+				}, {
+					"name": '周狗蛋',
+					"phone": 15261856116,
+				}, {
+					"name": '陈二毛',
+					"phone": 18061858180,
+				}, {
+					"name": '彭晓燕',
+					"phone": 17361858110,
+				}, {
+					"name": '宏慧慧',
+					"phone": 15361858112,
+				},{
+					"name": '赵建国',
+					"phone": 17461858116,
+				}, {
+					"name": '钱狗蛋',
+					"phone": 17361855215,
+				}, {
+					"name": '付二毛',
+					"phone": 19961855116,
+				}, {
+					"name": '江振华',
+					"phone": 17761856116,
+				}, {
+					"name": '杨慧慧',
+					"phone": 15361858114,
+				}, {
+					"name": '白仟慧',
+					"phone": 15361858114,
+				}, {
+					"name": '柏玉慧',
+					"phone": 15361858114,
+				}, {
+					"name": '阿啦慧',
+					"phone": 15361858114,
+				}, {
+					"name": '许晋辉',
+					"phone": 15361858114,
+				}];
+
+				for (var i in data) {
+					var pinyin = ConvertPinyin(data[i].name).substring(0, 1);
+					//循环字母列表
+					$(".mui-table-view .mui-indexed-list-group").each(function () {
+						if ($(this).html() == pinyin) {
+							var html = '<li class="mui-table-view-cell mui-indexed-list-item"> <img style="width:20px;height:20px;" src="./img/default_head.png"/><span class="item-name">' + data[i].name + '  ' + data[i].phone + '</span></li>'
+							$(this).after(html)
+						}
+					})
+				}
+				//将后面没有值得字母列表隐藏
+				$(".mui-table-view .mui-indexed-list-group").each(function () {
+					if ($(this).next().hasClass("mui-indexed-list-group")) {
+						$(this).remove();
+					}
+				})
+			}
+		</script>
+	</body>
+</html>
